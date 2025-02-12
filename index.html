@@ -67,10 +67,17 @@
                 // If not neutral site, add home court advantage to KenPom difference
                 const hcaAdjustment = isNeutral ? 0 : team1Data.hca;
                 const hcaAdjustmentE = isNeutral ? 0 : 3.35;
+                const hcaAdjustmentB = isNeutral ? 0 : 0.013;
                 
                 const kenpomDiff = (team2Data.kpRating - team1Data.kpRating)/100*67 - hcaAdjustment;
                 const espnDiff = team2Data.espnRating - team1Data.espnRating -hcaAdjustmentE;
-                const bartCalc = (team1Data.bartO / 107.3) * team2Data.bartD;
+                const bartT = (team1Data.bartT/67.07 * team2Data.bartT/67.07) * 67.07
+                const bart1pp100o = team1Data.bartO * (1+hcaAdjustmentB) / 107.3
+                const bart2pp100o = team2Data.bart0 * (1-hcaAdjustmentB) / 107.3
+                const bart1pp100d = team1Data.bartD * (1-hcaAdjustmentB) / 107.3
+                const bart2pp100d = team2Data.bartD * (1+hcaAdjustmentB) / 107.3
+                const bart1exp100 = bart1pp100o * bart2pp100d * 107.3
+                const bartCalc =  (team1Data.bartT/67.07 * team2Data.bartT/67.07) * 67.07 //(team1Data.bartO / 107.3) * team2Data.bartD;
                 const average = (kenpomDiff + espnDiff + bartCalc) / 3;
                 
                 let comparison = null;
