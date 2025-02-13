@@ -176,7 +176,7 @@
                             <div className="space-y-4">
                                 <div className="grid grid-cols-2 gap-4">
                                     <div className="p-4 bg-gray-50 rounded-md">
-                                        <p className="text-sm font-medium text-gray-600">KenPom Difference</p>
+                                        <p className="text-sm font-medium text-gray-600">KenPom Predicted Spread</p>
                                         <p className="text-lg">{results.kenpom.toFixed(2)}</p>
                                         {!isNeutral && (
                                             <p className="text-xs text-gray-500 mt-1">
@@ -185,11 +185,11 @@
                                         )}
                                     </div>
                                     <div className="p-4 bg-gray-50 rounded-md">
-                                        <p className="text-sm font-medium text-gray-600">ESPN Difference</p>
+                                        <p className="text-sm font-medium text-gray-600">ESPN Predicted Spread</p>
                                         <p className="text-lg">{results.espn.toFixed(2)}</p>
                                     </div>
                                     <div className="p-4 bg-gray-50 rounded-md">
-                                        <p className="text-sm font-medium text-gray-600">Bart Rating</p>
+                                        <p className="text-sm font-medium text-gray-600">Bart Predicted Spread</p>
                                         <p className="text-lg">{results.bart.toFixed(2)}</p>
                                     </div>
                                     <div className="p-4 bg-blue-50 rounded-md">
@@ -226,6 +226,7 @@
                                                 <p>ESPN Rating: {results.team1Details.espnRating}</p>
                                                 <p>Bart O: {results.team1Details.bartO}</p>
                                                 <p>Bart D: {results.team1Details.bartD}</p>
+                                                <p>Tempo: {results.team1Details.bartT}</p>
                                                 <p>HCA: {results.team1Details.hca}</p>
                                             </div>
                                         </div>
@@ -236,6 +237,7 @@
                                                 <p>ESPN Rating: {results.team2Details.espnRating}</p>
                                                 <p>Bart O: {results.team2Details.bartO}</p>
                                                 <p>Bart D: {results.team2Details.bartD}</p>
+                                                <p>Tempo: {results.team2Details.bartT}</p>
                                                 <p>HCA: {results.team2Details.hca}</p>
                                             </div>
                                         </div>
