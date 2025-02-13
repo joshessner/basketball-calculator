@@ -73,14 +73,14 @@
                 const espnDiff = team2Data.espnRating - team1Data.espnRating -hcaAdjustmentE;
                 const bartT = (team1Data.bartT/67.07 * team2Data.bartT/67.07) * 67.07;
                 const bart1pp100o = team1Data.bartO * (1+hcaAdjustmentB) / 107.3;
-                const bart2pp100o = team2Data.bart0 * (1-hcaAdjustmentB) / 107.3;
+                const bart2pp100o = team2Data.bartO * (1-hcaAdjustmentB) / 107.3;
                 const bart1pp100d = team1Data.bartD * (1-hcaAdjustmentB) / 107.3;
                 const bart2pp100d = team2Data.bartD * (1+hcaAdjustmentB) / 107.3;
                 const bart1exp100 = bart1pp100o * bart2pp100d * 107.3;
                 const bart2exp100 = bart2pp100o * bart1pp100d * 107.3;
                 const bart1point = bart1exp100 * bartT / 100;
-                const bart2point = bart2exp100 * bartT;
-                const bartCalc =  bart2pp100o;
+                const bart2point = bart2exp100 * bartT / 100;
+                const bartCalc =  bart2point - bart1point;
                 const average = (kenpomDiff + espnDiff + bartCalc) / 3;
                 
                 let comparison = null;
