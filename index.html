@@ -147,13 +147,13 @@
 
                         <div className="flex space-x-4 items-end">
                             <div className="flex-1">
-                                <label className="block text-sm font-medium mb-2">Compare to Value</label>
+                                <label className="block text-sm font-medium mb-2">Team1 Vegas Spread</label>
                                 <select
                                     value={compareValue}
                                     onChange={(e) => setCompareValue(e.target.value)}
                                     className="w-full p-2 border rounded-md bg-white"
                                 >
-                                    <option value="">Select a value (Team1 Spread)</option>
+                                    <option value="">Select a value</option>
                                     {comparisonValues.map(value => (
                                         <option key={value} value={value}>{value}</option>
                                     ))}
