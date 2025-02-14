@@ -85,6 +85,7 @@
                 const bart2point = bart2exp100 * bartT / 100;
                 const bartCalc =  bart2point - bart1point;
                 const average = (kenpomDiff + espnDiff + bartCalc) / 3;
+                const roundedAverage = Math.round(average);
                 
                 let comparison = null;
                 if (compareValue !== '') {
