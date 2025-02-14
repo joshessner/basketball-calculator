@@ -214,12 +214,7 @@
                                     <div className="p-4 bg-yellow-50 rounded-md">
                                         <p className="text-sm font-medium text-yellow-800">Model Results</p>
                                         <div className="space-y-2">
-                                            <p className="text-lg">
-                                                Difference from {results.comparison.value}: {' '}
-                                                <span className={results.comparison.difference > 0 ? 'text-green-600' : 'text-red-600'}>
-                                                    {results.comparison.difference > 0 ? '+' : ''}{results.comparison.difference.toFixed(2)}
-                                                </span>
-                                            </p>
+                                            
                                             {results.comparison.lookupValue !== undefined && (
                                                 <div className="mt-2 space-y-1">
                                                     <p className="text-sm font-semibold">
