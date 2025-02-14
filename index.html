@@ -223,10 +223,16 @@
                                             {results.comparison.lookupValue !== undefined && (
                                                 <div className="mt-2 space-y-1">
                                                     <p className="text-sm font-semibold">
-                                                        Helper Value ({results.comparison.lookupKey}): {(results.comparison.lookupValue * 100).toFixed(2)}%
+                                                        Edge on {team1} ({results.comparison.lookupKey}): {' '}
+                                                        <span className={results.comparison.lookupValue > 0 ? 'text-green-600' : 'text-red-600'}>
+                                                            {(results.comparison.lookupValue * 100).toFixed(2)}%
+                                                        </span>
                                                     </p>
                                                     <p className="text-sm font-semibold">
-                                                        Opposite Helper Value ({results.comparison.oppositeLookupKey}): {(results.comparison.oppositeLookupValue * 100).toFixed(2)}%
+                                                        Edge on {team2} ({results.comparison.oppositeLookupKey}): {' '}
+                                                        <span className={results.comparison.oppositeLookupValue > 0 ? 'text-green-600' : 'text-red-600'}>
+                                                            {(results.comparison.oppositeLookupValue * 100).toFixed(2)}%
+                                                        </span>
                                                     </p>
                                                 </div>
                                             )}
