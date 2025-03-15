@@ -6,8 +6,8 @@
     <title>Prediction Calculator</title>
     
     <!-- React and ReactDOM -->
-    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
-    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react@18.2.0/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18.2.0/umd/react-dom.production.min.js"></script>
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -277,6 +277,11 @@
         }
 
         try {
+            // Check if React and ReactDOM are available
+            if (typeof React === 'undefined' || typeof ReactDOM === 'undefined') {
+                throw new Error('React or ReactDOM libraries not loaded properly');
+            }
+    
             const root = ReactDOM.createRoot(document.getElementById('root'));
             root.render(<BasketballCalculator />);
         } catch (error) {
@@ -285,6 +290,7 @@
             errorDisplay.innerHTML = `
                 <h3>Failed to start calculator:</h3>
                 <p>${error.message}</p>
+                <p>Please try refreshing the page or switching to a desktop browser.</p>
             `;
         }
     </script>
