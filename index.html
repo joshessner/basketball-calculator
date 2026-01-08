@@ -145,7 +145,20 @@
                         <div className="flex justify-between items-center">
                             <h2 className="text-xl font-semibold">Predictions Calculator</h2>
                             <div className="text-sm text-gray-500">
-                                Last updated: {new Date().toLocaleDateString()}
+                              Last updated: {
+                                (() => {
+                                  const raw = document.lastModified;
+                                  const d = raw && !isNaN(Date.parse(raw)) ? new Date(raw) : null;
+                                  // Format with local date/time; you can tailor locale/options
+                                  return d ? d.toLocaleString(undefined, {
+                                    year: 'numeric',
+                                    month: 'short',
+                                    day: '2-digit',
+                                    hour: '2-digit',
+                                    minute: '2-digit'
+                                  }) : 'Unknown';
+                                })()
+                              }
                             </div>
                         </div>
 
